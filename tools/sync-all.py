@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""一条命令完成：生成令牌 -> 校验 -> 推送三个仓库到 GitHub。
+"""一条命令完成：生成令牌 -> 校验 -> 推送四个仓库到 GitHub。
 
 用法:
     set GITHUB_TOKEN=ghp_xxx
@@ -7,7 +7,7 @@
     python sync-all.py --no-push       # 只生成 + 校验
     python sync-all.py --dry-run       # 只生成 + 校验 + 列出待推送文件
 
-没设 GITHUB_TOKEN 时会提示你输入（不回显），只问一次，三个仓库复用。
+没设 GITHUB_TOKEN 时会提示你输入（不回显），只问一次，四个仓库复用。
 """
 from __future__ import annotations
 
@@ -41,6 +41,7 @@ TARGETS = [
     ("Suite",     APP_ROOT / "suite"),
     ("ChinGlish", APP_ROOT / "ChinGlish"),
     ("ToDoList",  APP_ROOT / "ToDoList"),
+    ("Inter",     APP_ROOT / "Inter"),
 ]
 
 

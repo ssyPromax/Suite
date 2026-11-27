@@ -41,7 +41,7 @@ python D:/.dswork/App/suite/design/gen.py --check
 python D:/.dswork/App/suite/tools/sync-all.py
 ```
 
-一条命令做三件事：生成令牌 → 校验漂移 → 推送 `Suite`、`ChinGlish`、`ToDoList` 三个仓库。
+一条命令做三件事：生成令牌 → 校验漂移 → 推送 `Suite`、`ChinGlish`、`ToDoList`、`Inter` 四个仓库。
 没设 `GITHUB_TOKEN` 时会提示输入一次（不回显），三个仓库复用。
 只想本地生效就加 `--no-push`。
 
@@ -95,9 +95,25 @@ app 独有的、不在设计令牌里的颜色，写进 `literals`，同样受�
 |---|---|---|
 | ChinGlish | Java + XML | `app/res/values/colors.xml` + `values-night` 由生成器全量接管 |
 | List (ToDoList) | Kotlin + Compose | `DsTokens.kt` 生成，`Theme.kt` 只做 Material3 映射 |
+| Inter | Kotlin + Compose | `DsTokens.kt` 生成，`Theme.kt` 只做 Material3 映射；坐标网格等独有色进 `literals` |
+
+## 应用内更新（Inter）
+
+Inter 从 v1.2.1 起支持应用内检查更新。更新源是 GitHub Release 里的 `update.json`（失败回退 GitHub API），
+APK 与 `update.json` 由 `Inter/tools/release.py` 上传，会校验 SHA-256、包名、版本号和签名。
+
+发布步骤：
+
+1. 改 `Inter/app/build.gradle.kts` 的 `versionCode` / `versionName`。
+2. `cd D:\.dswork\App\Inter` 后执行 `.\gradlew.bat :app:assembleRelease --offline`。
+3. 把 APK 复制到 `dist\Inter-v<版本>.apk`。
+4. `python D:/.dswork/App/suite/tools/sync-all.py` 推代码。
+5. `python D:/.dswork/App/Inter/tools/release.py --version <版本> --version-code <代码> --apk dist/Inter-v<版本>.apk --notes-file RELEASE_NOTES.md` 发 Release。
+
+签名材料（`keystore/`、`keystore.properties`）只在本地，`publish.py` 和 `.gitignore` 都会拦住。
 
 ## 注意
 
 - 生成的文件开头都有 `GENERATED FILE - DO NOT EDIT`，手改会被下一次生成覆盖。
 - 要改颜色请改 `tokens.json`，不要改 app 里的资源文件。
-- 两个 app 的构建方式不同（Gradle / 手写 aapt2），但都只是读这些生成文件，互不影响。
+- 三个 app 的构建方式不同（Gradle / 手写 aapt2），但都只是读这些生成文件，互不影响。

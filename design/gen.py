@@ -124,10 +124,11 @@ def render_kotlin(app: dict, tokens: dict) -> str:
     pkg = app["package"]
 
     def palette_block(scheme: str, object_name: str) -> str:
-        app_ctx = {**app, "literals": {}}
+        # 与 XML 目标一致：允许 app 在 tokens 之外用 literals 记录自己的颜色
+        # （例如 Inter 的坐标网格和三色曲线），避免绕过生成器手写色值。
         lines = [f"val {object_name} = DsPalette("]
         for prop, token_name in app["colors"].items():
-            value = resolve_color(token_name, scheme, tokens, app_ctx)
+            value = resolve_color(token_name, scheme, tokens, app)
             lines.append(f"    {prop} = Color({kotlin_hex(value)}),")
         lines.append(")")
         return "\n".join(lines)

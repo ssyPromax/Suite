@@ -37,12 +37,13 @@ DESCRIPTIONS = {
     "Suite": "dswork-suite — 多应用共用的设计令牌与生成器（单一真源）",
     "ChinGlish": "ChinGlish — 本地离线中英词典 + DeepSeek 问答 App",
     "ToDoList": "List — 极简安卓待办 / 日程 App（Kotlin + Jetpack Compose）",
+    "Inter": "Inter — 微积分绘图与 DeepSeek 积分学习助手（Android）",
 }
 
 # 永远不提交的东西（防止令牌、密钥、私货外泄）
 SECRET_PATTERNS = [
     ".env", ".env.*", "*.token", "*.secret", "*token*.txt", "secrets/", ".secrets/",
-    "*.keystore", "*.jks", "id_rsa*", ".credentials*",
+    "*.keystore", "*.jks", "keystore.properties", "id_rsa*", ".credentials*",
 ]
 
 

@@ -62,6 +62,43 @@
         "danger": "danger"
       },
       "literals": {}
+    },
+    {
+      "id": "inter",
+      "title": "Inter",
+      "kind": "android-compose",
+      "root": "D:/.dswork/App/Inter",
+      "package": "com.inter.calc.ui.theme",
+      "outputs": {
+        "kotlin": "app/src/main/java/com/inter/calc/ui/theme/DsTokens.kt"
+      },
+      "colors": {
+        "background": "bg",
+        "card": "surface",
+        "border": "divider",
+        "textPrimary": "text_primary",
+        "textSecondary": "text_secondary",
+        "selectedCard": "inverted_surface",
+        "onSelected": "on_inverted",
+        "accent": "accent",
+        "accentSoft": "accent_soft",
+        "onAccent": "on_accent",
+        "danger": "danger",
+        "graphCanvas": "graph_canvas",
+        "graphGrid": "graph_grid",
+        "graphAxis": "graph_axis",
+        "curveOriginal": "curve_original",
+        "curveDerivative": "curve_derivative",
+        "curveIntegral": "curve_integral"
+      },
+      "literals": {
+        "graph_canvas": { "light": "#FFFFFF", "dark": "#ECEAF2" },
+        "graph_grid": { "light": "#ECE8F4", "dark": "#DAD5E4" },
+        "graph_axis": { "light": "#9C94AA", "dark": "#7B7488" },
+        "curve_original": { "light": "#111111", "dark": "#111111" },
+        "curve_derivative": { "light": "#1E64D8", "dark": "#1E64D8" },
+        "curve_integral": { "light": "#D9383A", "dark": "#D9383A" }
+      }
     }
   ]
 }
