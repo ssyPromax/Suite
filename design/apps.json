@@ -1,0 +1,67 @@
+{
+  "$comment": "已注册的应用。新增一个 app 只需在 apps 里加一条，然后跑 gen.py。",
+  "apps": [
+    {
+      "id": "chinglish",
+      "title": "ChinGlish",
+      "kind": "android-xml",
+      "root": "D:/.dswork/App/ChinGlish",
+      "outputs": {
+        "colorsXml": "app/res/values/colors.xml",
+        "colorsXmlDark": "app/res/values-night/colors.xml",
+        "dimensXml": "app/res/values/ds_dimens.xml"
+      },
+      "colors": {
+        "bg": "bg",
+        "surface": "surface",
+        "surface2": "surface_alt",
+        "surface3": "surface_alt2",
+        "text": "text_primary",
+        "muted": "text_secondary",
+        "faint": "text_tertiary",
+        "accent": "accent",
+        "accent_dark": "accent_dark",
+        "accent_soft": "accent_soft",
+        "accent_on": "on_accent",
+        "green": "@accent",
+        "danger": "danger",
+        "divider": "divider",
+        "nav": "nav_bar",
+        "selected_card": "inverted_surface",
+        "on_selected": "on_inverted",
+        "on_selected_soft": "on_inverted_soft",
+        "md_code_bg": "@accent_soft",
+        "md_link": "@accent",
+        "md_quote": "@text_secondary"
+      },
+      "literals": {
+        "md_code_fg": { "light": "#2E6E3D", "dark": "#A7E0B2" },
+        "md_rule": { "light": "#D8D2E0", "dark": "#3A3445" }
+      }
+    },
+    {
+      "id": "list",
+      "title": "List (ToDoList)",
+      "kind": "android-compose",
+      "root": "D:/.dswork/App/ToDoList",
+      "package": "com.dswork.list.ui.theme",
+      "outputs": {
+        "kotlin": "app/src/main/java/com/dswork/list/ui/theme/DsTokens.kt"
+      },
+      "colors": {
+        "background": "bg",
+        "card": "surface",
+        "border": "divider",
+        "textPrimary": "text_primary",
+        "textSecondary": "text_secondary",
+        "selectedCard": "inverted_surface",
+        "onSelected": "on_inverted",
+        "accent": "accent",
+        "accentSoft": "accent_soft",
+        "onAccent": "on_accent",
+        "danger": "danger"
+      },
+      "literals": {}
+    }
+  ]
+}

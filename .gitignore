@@ -1,0 +1,15 @@
+# 密钥与本地私货——永不入库
+.env
+.env.*
+*.token
+*.secret
+secrets/
+.secrets/
+*.keystore
+*.jks
+id_rsa*
+.credentials*
+
+# 生成器的临时产物（如需保留请改这里）
+__pycache__/
+*.pyc
