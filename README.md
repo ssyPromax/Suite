@@ -117,3 +117,14 @@ APK 与 `update.json` 由 `Inter/tools/release.py` 上传，会校验 SHA-256、
 - 生成的文件开头都有 `GENERATED FILE - DO NOT EDIT`，手改会被下一次生成覆盖。
 - 要改颜色请改 `tokens.json`，不要改 app 里的资源文件。
 - 三个 app 的构建方式不同（Gradle / 手写 aapt2），但都只是读这些生成文件，互不影响。
+
+---
+
+## 许可证
+
+本项目采用 [GNU General Public License v3.0](LICENSE)（GPL-3.0）。
+
+Copyright (C) 2026 ssyPromax
+
+你可以自由使用、修改和分发本项目的代码；如果你分发修改后的版本，
+必须以同样的 GPL-3.0 协议公开源代码。
